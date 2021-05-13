@@ -2,10 +2,20 @@
 <html>
 <head>
 	<title>PSBT compressor</title>
+
+	<link rel="stylesheet" type="text/css" href="./static/base.css">
+	<link rel="stylesheet" type="text/css" href="./static/styles.css?q">
 </head>
 <body>
-	<h1>PSBT compressor</h1>
-	<input type="file" id="psbtin"/>
+	<main>
+		<h1>PSBT compressor</h1>
+		<h2>Select the PSBT file to compress:</h2>
+		<label for="psbtin" class="btn" id="filebtn">Click to choose the file...</label>
+		<input type="file" id="psbtin" style="display:none"/>
+		<h2>Compressed PSBT:</h2>
+		<a class="btn" id="psbtout" download="compressed.psbt" style="display:none">Download compressed file</a>
+	</main>
+
 	<script type="module" src="./static/app.js"></script>
 </body>
 </html>
