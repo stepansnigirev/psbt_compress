@@ -1,0 +1,15 @@
+{
+  "name": "psbt_compress",
+  "collaborators": [
+    "Stepan Snigirev <snigirev.stepan@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "psbt_compress_bg.wasm",
+    "psbt_compress.js",
+    "psbt_compress.d.ts"
+  ],
+  "module": "psbt_compress.js",
+  "types": "psbt_compress.d.ts",
+  "sideEffects": false
+}
