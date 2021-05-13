@@ -21,7 +21,7 @@ macro_rules! jserr {
 
 #[wasm_bindgen]
 pub fn compress(psbtin: &str) -> Result<JsValue, JsValue>{
-    let raw = base64::decode(psbtin).unwrap();
+    let raw = jserr!(base64::decode(psbtin));
     let mut psbt:PartiallySignedTransaction = jserr!(deserialize(&raw));
     // process all inputs
     for inp in psbt.inputs.iter_mut() {

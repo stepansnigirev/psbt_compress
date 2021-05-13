@@ -3,17 +3,24 @@
 <head>
 	<title>PSBT compressor</title>
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+
 	<link rel="stylesheet" type="text/css" href="./static/base.css">
 	<link rel="stylesheet" type="text/css" href="./static/styles.css?q">
 </head>
 <body>
 	<main>
 		<h1>PSBT compressor</h1>
+		<div class="note"><center>
+			A small tool that removes <code>non_witness_utxo</code> information from the transaction inputs so your hardware wallet doesn't run into memory problems.
+		</center></div>
 		<h2>Select the PSBT file to compress:</h2>
 		<label for="psbtin" class="btn" id="filebtn">Click to choose the file...</label>
 		<input type="file" id="psbtin" style="display:none"/>
 		<h2>Compressed PSBT:</h2>
 		<a class="btn" id="psbtout" download="compressed.psbt" style="display:none">Download compressed file</a>
+		<div class="error" id="error"></div>
 	</main>
 
 	<script type="module" src="./static/app.js"></script>
