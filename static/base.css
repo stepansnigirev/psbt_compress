@@ -1,0 +1,29 @@
+html, body{
+  /* network colors */
+  --test-color:         #00F100;
+  --main-color:         #FF9A00;
+  --regtest-color:      #00CAF1;
+  --signet-color:       #BD10E0;
+  --default-color:      #79869B;
+  /* color scheme */
+  --cmap-blue:          #4B8CD8;
+  --cmap-blue-darker:   #3575C0;
+  --cmap-red:           #A12737;
+  --cmap-red-darker:    #951E2D;
+  --cmap-bg:            #192432;
+  --cmap-bg-ligher:     #263044;
+  --cmap-bg-lightest:   #313E50;
+  --cmap-border:        #506072;
+  --cmap-border-darker: #405062;
+
+  margin: 0;
+  padding: 0;
+  background: var(--cmap-bg);
+  color: #fff;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-weight: lighter;
+}
+*{
+  box-sizing: border-box;
+}
