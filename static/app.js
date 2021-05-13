@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function(){
                 console.log(buf.substring(0,5));
                 let compressed = compress(buf);
                 console.log(compressed.substring(0,5));
+                console.log(buf.length);
+                console.log(compressed.length);
             }
             // reader.readAsText(file);
             reader.readAsBinaryString(file);
