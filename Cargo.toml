@@ -9,4 +9,5 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 wasm-bindgen = "0.2.68"
-bitcoin = { version="0.26.0", features=["base64"] }
+bitcoin = { version="0.26.0", features=["base64", "use-serde"] }
+serde_json = "1.0"

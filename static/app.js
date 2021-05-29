@@ -1,4 +1,4 @@
-import init, { compress } from '../pkg/psbt_compress.js';
+import init, { compress, decode } from '../pkg/psbt_compress.js';
 
 async function run() {
   await init();
@@ -10,6 +10,16 @@ function showError(msg){
     document.getElementById("psbtout").style.display = 'none';
     document.getElementById("error").style.display = 'block';
     document.getElementById("error").innerHTML = msg;
+}
+
+class PSBT extends Object {
+    constructor(obj){
+        super();
+        obj && Object.assign(this, obj);
+    }
+    fee(){
+        console.log("fee!");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -40,6 +50,11 @@ document.addEventListener("DOMContentLoaded", function(){
                     }
                     fbtn.innerHTML = `${file.name}: ${buf.length} bytes`;
                     let compressed = compress(buf);
+                    // let decoded = JSON.parse(decode(buf));
+                    // let psbt = new PSBT(decoded);
+                    // console.log(psbt);
+                    // psbt.fee();
+                    // console.log(JSON.stringify(psbt) == JSON.stringify(decoded));
                     downloadbtn.href="data:application/octet-stream;base64,"+compressed;
                     downloadbtn.innerHTML = `Download compressed file: ${compressed.length} bytes`;
                     downloadbtn.style.display = 'block';

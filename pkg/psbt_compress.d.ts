@@ -5,12 +5,18 @@
 * @returns {any}
 */
 export function compress(psbtin: string): any;
+/**
+* @param {string} psbtin
+* @returns {any}
+*/
+export function decode(psbtin: string): any;
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
   readonly compress: (a: number, b: number) => number;
+  readonly decode: (a: number, b: number) => number;
   readonly rustsecp256k1_v0_4_0_ec_pubkey_serialize: (a: number, b: number, c: number, d: number, e: number) => number;
   readonly rustsecp256k1_v0_4_0_ec_pubkey_parse: (a: number, b: number, c: number, d: number) => number;
   readonly rustsecp256k1_v0_4_0_ec_seckey_verify: (a: number, b: number) => number;

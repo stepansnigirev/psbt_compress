@@ -111,6 +111,17 @@ export function compress(psbtin) {
     return takeObject(ret);
 }
 
+/**
+* @param {string} psbtin
+* @returns {any}
+*/
+export function decode(psbtin) {
+    var ptr0 = passStringToWasm0(psbtin, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    var len0 = WASM_VECTOR_LEN;
+    var ret = wasm.decode(ptr0, len0);
+    return takeObject(ret);
+}
+
 async function load(module, imports) {
     if (typeof Response === 'function' && module instanceof Response) {
         if (typeof WebAssembly.instantiateStreaming === 'function') {

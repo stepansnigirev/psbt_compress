@@ -2,6 +2,7 @@
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
 export function compress(a: number, b: number): number;
+export function decode(a: number, b: number): number;
 export function rustsecp256k1_v0_4_0_ec_pubkey_serialize(a: number, b: number, c: number, d: number, e: number): number;
 export function rustsecp256k1_v0_4_0_ec_pubkey_parse(a: number, b: number, c: number, d: number): number;
 export function rustsecp256k1_v0_4_0_ec_seckey_verify(a: number, b: number): number;

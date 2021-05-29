@@ -30,3 +30,11 @@ pub fn compress(psbtin: &str) -> Result<JsValue, JsValue>{
     let compressed = base64::encode(&serialize(&psbt));
     Ok(compressed.into())
 }
+
+#[wasm_bindgen]
+pub fn decode(psbtin: &str) -> Result<JsValue, JsValue>{
+    let raw = jserr!(base64::decode(psbtin));
+    let psbt:PartiallySignedTransaction = jserr!(deserialize(&raw));
+    let res = jserr!(serde_json::to_string(&psbt));
+    Ok(res.into())
+}
